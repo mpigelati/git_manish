@@ -1,30 +1,36 @@
 import json
 import subprocess
+import os
 
 gitlog= "git log > git_log.txt"
 subprocess.call(gitlog,shell=True)
-#with open('data.json','r') as js:
- #   print(js)
 
 
+def Fun_JS_Data_files(JS_Data):
+    print(JS_Data)
+    for line in JS_Data:
+        print("Commit",line["Commit"])
+        print("Auther",line["Auther"])
+        string = "git show --pretty="" --name-only "+line["Commit"]
+        subprocess.call(string,shell=True)
+        #print("string",string)
+        #print(git show --pretty="" --name-only bd61ad98)
 
 def Fun_json_print():
     with open("data.json","r") as pd:
-        data = json.load(pd)
-        print(data)
-    for line in data:
-      print(line["commit"])
+         data = json.load(pd)
+         return data
+        #print(data)
+    #for line in data:
+    #  print(line["commit"])
 
 def Fun_json(my_list):
     #print("mylist",my_list)
-    #print("my_list_len",len(my_list))
-
     data = {}
     data = []
-    # data['data']
     data.append(
         {
-            'commit':my_list[0].split(" ")[1].rstrip("\n"),
+            'Commit':my_list[0].split(" ")[1].rstrip("\n"),
             'Auther': my_list[1].split(":")[1].rstrip("\n"),
             'Date': my_list[2].split(":")[1].rstrip("\n"),
             'Dev_Comment': my_list[3].lstrip(" ")
@@ -39,7 +45,6 @@ with open('git_log.txt','r') as fd:
     print(fd)
     data =fd.readlines()
     size=len(data)-1
-    #print("size",size)
     t_list=[]
 
 for i, line in enumerate(data):
@@ -51,4 +56,7 @@ for i, line in enumerate(data):
         #print(t_list)
         t_list.clear()
 
-Fun_json_print()
+JS_Data=Fun_json_print()
+#print("js",JS_Data)
+
+Fun_JS_Data_files(JS_Data)

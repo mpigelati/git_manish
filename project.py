@@ -6,30 +6,33 @@ subprocess.call(gitlog,shell=True)
 #with open('data.json','r') as js:
  #   print(js)
 
-my_json={}
-my_json=[]
+
 
 def Fun_json_print():
     with open("data.json","r") as pd:
         data = json.load(pd)
         print(data)
-    #for line in data:
-    #  print(line["commit"])
+    for line in data:
+      print(line["commit"])
 
 def Fun_json(my_list):
     #print("mylist",my_list)
     #print("my_list_len",len(my_list))
-    my_json.append(
-            {
-                'commit':my_list[0].split(":")[0],
-                'Auther':my_list[1],
-                'Date' :my_list[2],
-                'Text':my_list[3].lstrip(" ")
-            })
+
+    data = {}
+    data = []
+    # data['data']
+    data.append(
+        {
+            'commit':my_list[0].split(" ")[1].rstrip("\n"),
+            'Auther': my_list[1].split(":")[1].rstrip("\n"),
+            'Date': my_list[2].split(":")[1].rstrip("\n"),
+            'Dev_Comment': my_list[3].lstrip(" ")
+        }
+    )
     with open("data.json", 'w')as fd:
         #print(fd)
         json.dump(data,fd)
-
 
 
 with open('git_log.txt','r') as fd:

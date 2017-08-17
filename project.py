@@ -25,15 +25,15 @@ def Fun_json_print():
     #  print(line["commit"])
 
 def Fun_json(my_list):
-    #print("mylist",my_list)
+    print("mylist",my_list)
     data = {}
     data = []
     data.append(
         {
-            'Commit':my_list[0].split(" ")[1].rstrip("\n"),
-            'Auther': my_list[1].split(":")[1].rstrip("\n"),
-            'Date': my_list[2].split(":")[1].rstrip("\n"),
-            'Dev_Comment': my_list[3].lstrip(" ")
+            #'Commit':my_list[0].split(" ")[1].rstrip("\n"),
+            #'Auther':my_list[1].split(":")[1].rstrip("\n"),
+            #'Date': my_list[2].split(":")[1].rstrip("\n"),
+            #'Dev_Comment': my_list[3].lstrip(" ")
         }
     )
     with open("data.json", 'w')as fd:
@@ -48,15 +48,18 @@ with open('git_log.txt','r') as fd:
     t_list=[]
 
 for i, line in enumerate(data):
+    #print(line)
     if("commit" in line and size != i):
         for j in range(i,i+5):
             if(data[j] != "\n"):
-                t_list.append(data[j])
-        Fun_json(t_list)
+                print(data[j])
+                #t_list.append(data[j])
+        print("\n\n ")
+        #Fun_json(t_list)
         #print(t_list)
         t_list.clear()
 
-JS_Data=Fun_json_print()
+#JS_Data=Fun_json_print()
 #print("js",JS_Data)
 
-Fun_JS_Data_files(JS_Data)
+#Fun_JS_Data_files(JS_Data)

@@ -1,0 +1,17 @@
+commit 6ccfd840a158da9e38e44044d54345d49e932541
+Author: mpigelati <saimohansai@gmail.com>
+Date:   Wed Aug 16 10:18:27 2017 +0530
+
+    able to print committed files using commit
+
+commit cfbfa9fe9f52d317ace1f05f5f67355103718ce6
+Author: mpigelati <saimohansai@gmail.com>
+Date:   Wed Aug 16 09:54:15 2017 +0530
+
+    basic structure is working
+
+commit 1fa8611f16b6ab4c33cc7380dea59309a99fedca
+Author: mpigelati <saimohansai@gmail.com>
+Date:   Wed Aug 16 09:08:59 2017 +0530
+
+    adding new file to project

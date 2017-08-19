@@ -1,40 +1,31 @@
 import json
+import os
 
 
-"""
-def Fun_Json_parser(list):
-    print(list)
-    j_data={}
-    j_data=[]
+def Fun_data_print():
+    with open("data.json", 'r')as fd:
+        data =json.load(fd)
+        print(data)
 
-    j_data.append(
-        {
-             'Commit':list[0].split(" ")[1].rstrip("\n"),
-             'Auther':list[1].split(":")[1].rstrip("\n"),
-             'Date': list[2].split(":")[1].rstrip("\n"),
-             'Dev_Comment': list[3].lstrip(" ")
-        }
-    )
-    with open("data.json", 'w')as fd:
-        # print(fd)
-        json.dump(j_data, fd)
-"""
+
 
 def Fun_json(my_list):
-    print("mylist",my_list)
-    data = {}
+    #print("mylist",my_list)
     data = []
-    data.append(
-        {
+
+    data={
             'Commit':my_list[0].split(" ")[1].rstrip("\n"),
             'Auther':my_list[1].split(":")[1].rstrip("\n"),
             'Date': my_list[2].split(":")[1].rstrip("\n").lstrip(" "),
             'Dev_Comment': my_list[3].lstrip(" ").rstrip("\n")
-        }
-    )
-    with open("data.json", 'w')as fd:
-        #print(fd)
-        json.dump(data,fd)
+         }
+
+    with open("data.json", 'a')as fd:
+       json.dump(data,fd,indent=2)
+
+
+
+
 
 with open('git_log.txt','r') as fd:
     print(fd)
@@ -56,3 +47,4 @@ for i, line in enumerate(data):
         Fun_json(j_list)
         j_list.clear()
         print("\n\n")
+#Fun_data_print()

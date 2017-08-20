@@ -1,32 +1,14 @@
 import json
 import os
-import subprocess
+import  feedparser
 
-def Fun_JS_Data_files(JS_Data):
-    print(JS_Data)
-    for line in JS_Data:
-        print("Commit",line["Commit"])
-        print("Auther",line["Auther"])
-        string = "git show --pretty="" --name-only "+line["Commit"]
-        subprocess.call(string,shell=True)
-        #print("string",string)
-        #print(git show --pretty="" --name-only bd61ad98)
-
-
-def Fun_delete_file_Json_file():
-    try:
-        os.path.exists("data.json")
-
-    except FileNotFoundError:
-        print("file not there")
-    else:
-        print("file is there ")
-        os.remove("data.json")
 
 def Fun_data_print():
     with open("data.json", 'r')as fd:
         data =json.load(fd)
         print(data)
+
+
 
 def Fun_json(my_list):
     #print("mylist", my_list)
@@ -46,7 +28,7 @@ def Fun_json(my_list):
 
 
 
-Fun_delete_file_Json_file()
+
 with open('git_log.txt','r') as fd:
     print(fd)
     data =fd.readlines()

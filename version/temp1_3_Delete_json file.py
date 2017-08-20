@@ -1,17 +1,6 @@
 import json
 import os
-import subprocess
-
-def Fun_JS_Data_files(JS_Data):
-    print(JS_Data)
-    for line in JS_Data:
-        print("Commit",line["Commit"])
-        print("Auther",line["Auther"])
-        string = "git show --pretty="" --name-only "+line["Commit"]
-        subprocess.call(string,shell=True)
-        #print("string",string)
-        #print(git show --pretty="" --name-only bd61ad98)
-
+import  feedparser
 
 def Fun_delete_file_Json_file():
     try:
@@ -27,6 +16,8 @@ def Fun_data_print():
     with open("data.json", 'r')as fd:
         data =json.load(fd)
         print(data)
+
+
 
 def Fun_json(my_list):
     #print("mylist", my_list)

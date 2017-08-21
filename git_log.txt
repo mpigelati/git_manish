@@ -1,17 +1,18 @@
-commit 6ccfd840a158da9e38e44044d54345d49e932541
+commit 0738acdeb7addc53d0399cc05be1ae88b83897f3
+Merge: 35278c2 6ed8b6c
 Author: mpigelati <saimohansai@gmail.com>
-Date:   Wed Aug 16 10:18:27 2017 +0530
+Date:   Mon Aug 21 16:07:55 2017 +0530
 
-    able to print committed files using commit
+    able to generate json file
 
-commit cfbfa9fe9f52d317ace1f05f5f67355103718ce6
+commit 35278c202f12cc6a326526c4e68ade795ee925c5
 Author: mpigelati <saimohansai@gmail.com>
-Date:   Wed Aug 16 09:54:15 2017 +0530
+Date:   Mon Aug 21 08:40:32 2017 +0530
 
-    basic structure is working
+    adding sample to git
 
-commit cfbfa9fe9f52d317ace1f05f5f67355103718ce6
+commit 6ed8b6c3d93207ee848a4bdde71fa0c09df675a2
 Author: mpigelati <saimohansai@gmail.com>
-Date:   Wed Aug 16 09:54:15 2017 +0530
+Date:   Sun Aug 20 21:11:29 2017 +0530
 
-    basic structure is working
+    adding version in file

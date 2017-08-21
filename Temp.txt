@@ -63,3 +63,13 @@ for i, line in enumerate(data):
 #print("js",JS_Data)
 
 #Fun_JS_Data_files(JS_Data)
+
+
+J_data.append(
+                            {
+                                'Commit': my_list[0].split(" ")[1].rstrip("\n"),
+                                'Auther': my_list[1].split(":")[1].rstrip("\n"),
+                                'Date': my_list[2].split(":")[1].rstrip("\n"),
+                                'Dev_Comment': my_list[3].lstrip(" ")
+                            }
+                          )

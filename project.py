@@ -59,7 +59,7 @@ for i, line in enumerate(data):
         #print(t_list)
         t_list.clear()
 
-#JS_Data=Fun_json_print()
+JS_Data=Fun_json_print()
 #print("js",JS_Data)
 
 #Fun_JS_Data_files(JS_Data)

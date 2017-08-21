@@ -60,5 +60,5 @@ while 1:
         j_list.clear()
 
     Fun_files_print_log()
-    print("stating timer for 10 sec")
-    time.sleep(10)
+    print("stating timer for 3 sec")
+    time.sleep(3)
